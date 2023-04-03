@@ -2,7 +2,7 @@
 The purpose of this file is to keep documentation of changes and updates to the project to improve security. 
 
 # Update History
-## Completed Items (Check-In 1)
+## Completed Items
 ### Item 1: Ensure Libraries Are Up-To-Date
 **Priority:** Middle <br />
 
