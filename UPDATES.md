@@ -42,8 +42,9 @@ which would allow a malicious actor to access and alter the codebase.
 
 **Summary:** This project originally existed as a file on OneDrive. This storage method was secure, but did not provide a 
 way to track changes to the code. Moving the project to a GitHub repository allows detailed tracking of every update to
-the codebase and a record of who created the changes. This will keep the project secure from malicious changes or 
-unauthorized access by a bad actor. The commits page of the project shows a record of all changes made. 
+the codebase and a record of who created the changes. This will help keep the project secure from malicious changes or 
+unauthorized access by a bad actor. The commits page of the project shows a record of all changes made and can be used 
+to identify individuals making unauthorized changes. 
 
 # To Do
 ### Item 4: Sanitize Inputs (Ensure Valid Input)
@@ -54,7 +55,7 @@ unauthorized access by a bad actor. The commits page of the project shows a reco
 **Link:** <br />
 
 **Summary:** The purpose of this task will be to limit (or eliminate) buffer underflow and overflow as well as unwanted
-inputs (i.e. a work being input when a number is required) to avoid exploitation of the code.
+inputs (i.e. a word being input when a number is required) to avoid exploitation of the code.
 
 ### Item 5: Add Smart Pointers to Point Class
 **Priority:** Middle <br />
@@ -83,5 +84,5 @@ ensure the smart pointers do not cause errors in the exisitng code.
 
 **Link:** <br />
 
-**Summary:** The purpose of this task will be to add a method of logging errors to the code so when it is run errors are 
+**Summary:** The purpose of this task will be to add a method of logging errors in the code so when it is run errors are 
 documented to avoid purely relying on manual reporting of vulnerabilities in the code. 
