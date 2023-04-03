@@ -63,7 +63,7 @@ inputs (i.e. a work being input when a number is required) to avoid exploitation
 
 **Link:** <br />
 
-**Summary:** The purpose of this task will be do add smart pointers to the point class and make any additional changes to 
+**Summary:** The purpose of this task will be to add smart pointers to the point class and make any additional changes to 
 ensure the smart pointers do not cause errors in the exisitng code. 
 
 ### Item 6: Add Smart Pointers to Line Class
@@ -73,7 +73,7 @@ ensure the smart pointers do not cause errors in the exisitng code.
 
 **Link:** <br />
 
-**Summary:** The purpose of this task will be do add smart pointers to the line class and make any additional changes to 
+**Summary:** The purpose of this task will be to add smart pointers to the line class and make any additional changes to 
 ensure the smart pointers do not cause errors in the exisitng code. 
 
 ### Item 7: Accounting - Add Error Logging to Code
