@@ -63,7 +63,8 @@ inputs (i.e. a work being input when a number is required) to avoid exploitation
 
 **Link:** <br />
 
-**Summary:**
+**Summary:** The purpose of this task will be do add smart pointers to the point class and make any additional changes to 
+ensure the smart pointers do not cause errors in the exisitng code. 
 
 ### Item 6: Add Smart Pointers to Line Class
 **Priority:** Middle <br />
@@ -72,7 +73,8 @@ inputs (i.e. a work being input when a number is required) to avoid exploitation
 
 **Link:** <br />
 
-**Summary:**
+**Summary:** The purpose of this task will be do add smart pointers to the line class and make any additional changes to 
+ensure the smart pointers do not cause errors in the exisitng code. 
 
 ### Item 7: Accounting - Add Error Logging to Code
 **Priority:** Middle <br />
@@ -81,5 +83,5 @@ inputs (i.e. a work being input when a number is required) to avoid exploitation
 
 **Link:** <br />
 
-**Summary:**
-
+**Summary:** The purpose of this task will be to add a method of logging errors to the code so when it is run errors are 
+documented to avoid purely relying on manual reporting of vulnerabilities in the code. 
