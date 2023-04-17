@@ -86,3 +86,20 @@ ensure the smart pointers do not cause errors in the exisitng code.
 
 **Summary:** The purpose of this task will be to add a method of logging errors in the code so when it is run errors are 
 documented to avoid purely relying on manual reporting of vulnerabilities in the code. 
+
+# Planning Issues
+Documenting Planning issues which were not completed during initial planning for this project and how they can be implemented in future planning/projects.
+
+# Reporting Code Issues
+Fixing and providing a report on the fix of a code issue or software vulnerability. (link security policy)
+
+# Online Repository Security
+Explaining how the addition or use of an online repository has increased security related to...
+## Access Control (Code Sharing/Distribution)
+
+## Network Security
+
+## Accounting Issues
+
+# Security Testing Implementation
+Explaining how any security testing that is implemented (or needs to be implemented with plan to implement).
