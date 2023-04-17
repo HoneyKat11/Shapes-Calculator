@@ -7,6 +7,7 @@
 
 #include <iostream> // console I/O
 #include <vector> // vectors (lists)
+#include <memory> // dynamic memory management library (unique pointers)
 #include "Point.h"
 #include "Shape.h"
 #include "Line.h"
@@ -17,17 +18,17 @@
 // Function Prototypes (Declarations)
 //-----------------------------------------------------------
 Point getPoint();
-Line* createLine();
-Rectangle* createRectangle();
-Circle* createCircle();
-Triangle* createTriangle();
-void printShapes(std::vector<Shape*> shapesVector);
+std::unique_ptr<Line> createLine();
+std::unique_ptr<Rectangle> createRectangle();
+std::unique_ptr<Circle> createCircle();
+std::unique_ptr<Triangle> createTriangle();
+void printShapes(std::vector<std::unique_ptr<Shape>>& shapesVector);
 
 
 int main() {
 
     // create shape collection vector
-    std::vector<Shape*> shapesVector;
+    std::vector<std::unique_ptr<Shape>> shapesVector;
 
     // begin program loop
     bool addShapes = true;
@@ -47,16 +48,16 @@ int main() {
 
         switch(shapeMode) {
             case LINE:
-                shapesVector.push_back(createLine());
+                shapesVector.push_back(std::move(createLine()));
                 break; // end line
             case RECTANGLE:
-                shapesVector.push_back(createRectangle());
+                shapesVector.push_back(std::move(createRectangle()));
                 break; // end rectangle
             case CIRCLE:
-                shapesVector.push_back(createCircle());
+                shapesVector.push_back(std::move(createCircle()));
                 break; // end circle
             case TRIANGLE:
-                shapesVector.push_back(createTriangle());
+                shapesVector.push_back(std::move(createTriangle()));
                 break; // end triangle
             case PRINT:
                 printShapes(shapesVector);
@@ -97,8 +98,8 @@ Point getPoint() {
  * create a line to add to the collection
  * @return the created line
  */
-Line* createLine() {
-    Line* newLine = new Line();
+std::unique_ptr<Line> createLine() {
+    std::unique_ptr<Line> newLine(new Line());
 
     std::cout << "Enter coordinates for two points of the line: " << std::endl;
     newLine->setPointOne(getPoint());
@@ -112,8 +113,8 @@ Line* createLine() {
  * create a rectangle to add to the collection
  * @return the created rectangle
  */
-Rectangle* createRectangle() {
-    Rectangle* newRectangle = new Rectangle();
+std::unique_ptr<Rectangle> createRectangle() {
+    std::unique_ptr<Rectangle> newRectangle(new Rectangle());
 
     std::cout << "Enter bottom left coordinate and values for rectangle: " << std::endl;
     newRectangle->setBottomLeftPoint(getPoint());
@@ -136,8 +137,8 @@ Rectangle* createRectangle() {
  * create a circle to add to the collection
  * @return the created circle
  */
-Circle* createCircle() {
-    Circle* newCircle = new Circle();
+std::unique_ptr<Circle> createCircle() {
+    std::unique_ptr<Circle> newCircle(new Circle());
 
     std::cout << "Enter point for the center of the circle: " << std::endl;
     newCircle->setCenterPoint(getPoint());
@@ -155,8 +156,8 @@ Circle* createCircle() {
  * create a right triangle to add to the collection
  * @return the created triangle
  */
-Triangle* createTriangle() {
-    Triangle* newTriangle = new Triangle();
+std::unique_ptr<Triangle> createTriangle() {
+    std::unique_ptr<Triangle> newTriangle(new Triangle());
 
     std::cout << "Enter the coordinates for right angle of the triangle: " << std::endl;
     newTriangle->setRightAnglePoint(getPoint());
@@ -180,7 +181,7 @@ Triangle* createTriangle() {
  * @param shapesVector - vector collection of all the created shapes
  * @param shapeCount  - number of shapes in the vector collection
  */
-void printShapes(std::vector<Shape*> shapesVector) {
+void printShapes(std::vector<std::unique_ptr<Shape>>& shapesVector) {
     for (int i = 0; i < shapesVector.size(); i++) {
         std::cout << std::to_string(i + 1) << ". " << shapesVector[i]->shapeProperties() << std::endl;
     }
