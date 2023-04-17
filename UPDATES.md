@@ -46,7 +46,6 @@ the codebase and a record of who created the changes. This will help keep the pr
 unauthorized access by a bad actor. The commits page of the project shows a record of all changes made and can be used 
 to identify individuals making unauthorized changes. 
 
-# To Do
 ### Item 4: Sanitize Inputs (Ensure Valid Input)
 **Priority:** High <br />
 
@@ -57,27 +56,19 @@ to identify individuals making unauthorized changes.
 **Summary:** The purpose of this task will be to limit (or eliminate) buffer underflow and overflow as well as unwanted
 inputs (i.e. a word being input when a number is required) to avoid exploitation of the code.
 
-### Item 5: Add Smart Pointers to Point Class
+### Item 5: Add Smart Pointers to Main Program
 **Priority:** Middle <br />
 
 **Difficulty:** Moderate <br />
 
-**Link:** <br />
+**Link:** [Issue 5](https://github.com/HoneyKat11/Shapes-Calculator/issues/5)<br />
 
-**Summary:** The purpose of this task will be to add smart pointers to the point class and make any additional changes to 
-ensure the smart pointers do not cause errors in the exisiting code. 
+**Summary:** The purpose of this task was to add smart pointers (specifically, unique pointers) to the main program
+to increase security and help prevent issues such as [memory leaks and buffer overflow](https://www.geeksforgeeks.org/smart-pointers-cpp/#). 
+Pointers were mainly used within the vector that stored each type of shape created in the main program. Adding unique
+pointers ensures that shapes cannot be easily manipulated by malicious actors. 
 
-### Item 6: Add Smart Pointers to Line Class
-**Priority:** Middle <br />
-
-**Difficulty:** Moderate <br />
-
-**Link:** <br />
-
-**Summary:** The purpose of this task will be to add smart pointers to the line class and make any additional changes to 
-ensure the smart pointers do not cause errors in the exisiting code. 
-
-### Item 7: Accounting - Add Error Logging to Code
+### Item 6: Accounting - Add Error Logging to Code
 **Priority:** Middle <br />
 
 **Difficulty:** Moderate <br />
