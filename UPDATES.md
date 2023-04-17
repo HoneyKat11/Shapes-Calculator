@@ -25,7 +25,7 @@ in the project. The libraries utilized in the project are secure and up to date.
 
 **Difficulty:** Moderate <br />
 
-**Link:** [Security Policy](https://github.com/HoneyKat11/Shapes-Calculator/security/policy) <br />
+**Link:** [Security Policy](https://github.com/HoneyKat11/Shapes-Calculator/commit/b8e770d3a957fadcd50fd018ba0598e427f7326b) <br />
 
 **Summary:** This project did not have a security policy prior to being uploaded to GitHub. Now, a basic security policy
 has been established to give users a method to report vulnerabilities and steps on how a malicious internal actor will
