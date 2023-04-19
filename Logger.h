@@ -9,8 +9,6 @@
 #ifndef PROJECT_SHAPES_CALCULATOR_LOGGER_H
 #define PROJECT_SHAPES_CALCULATOR_LOGGER_H
 
-#include <fstream> // for file writing
-
 enum ErrorSeverity {
     TRACE, // 0 by default
     DEBUG, // 1

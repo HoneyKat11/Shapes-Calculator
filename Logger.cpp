@@ -6,7 +6,10 @@
 //---------------------------------------------------------
 
 #include <iostream> // console I/O
+#include <fstream> // for file writing
+#include <chrono> // for timestamps
 #include "Logger.h"
+
 
 // Constructors
 //---------------------------------------------------------
@@ -33,24 +36,30 @@ void Logger::log(ErrorSeverity type, const char* message) {
     if (type >= severity) {
         std::ofstream FILE(filepath, std::ios_base::app);
 
+        // add timestamp to file
+        auto time = std::chrono::system_clock::now();
+        std::time_t timestamp = std::chrono::system_clock::to_time_t(time);
+        FILE << std::ctime(&timestamp);
+
+
         switch (type) {
             case TRACE:
-                FILE << "TRACE: \t";
+                FILE << " TRACE: ";
                 break;
             case DEBUG:
-                FILE << "DEBUG: \t";
+                FILE << " DEBUG: ";
                 break;
             case INFO:
-                FILE << "INFO: \t";
+                FILE << " INFO: ";
                 break;
             case WARN:
-                FILE << "WARN: \t";
+                FILE << " WARN: ";
                 break;
             case ERROR:
-                FILE << "ERROR: \t";
+                FILE << " ERROR: ";
                 break;
             case CRITICAL:
-                FILE << "CRITICAL: \t";
+                FILE << " CRITICAL: ";
         }
 
         // add error message to log.txt
