@@ -1,0 +1,8 @@
+Wed Apr 19 00:47:48 2023
+ ERROR: shapeMode input was invalid
+Wed Apr 19 00:47:51 2023
+ ERROR: shapeMode input was invalid
+Wed Apr 19 00:47:54 2023
+ ERROR: shapeMode input was invalid
+Wed Apr 19 00:48:00 2023
+ ERROR: validateInput() input was invalid

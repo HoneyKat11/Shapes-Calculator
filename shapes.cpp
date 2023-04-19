@@ -15,6 +15,7 @@
 #include "Rectangle.h"
 #include "Circle.h"
 #include "Triangle.h"
+#include "Logger.h"
 
 // Function Prototypes (Declarations)
 //-----------------------------------------------------------
@@ -50,6 +51,7 @@ int main() {
 
         while (!validMode) {
             if (std::cin.fail()) {
+                Logger::log(ERROR, "shapeMode input was invalid");
                 std::cin.clear();
                 std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 std::cout << "You have entered an invalid mode. Please retry: ";
@@ -100,6 +102,7 @@ float validateInput(float input) {
     // loop until valid input is provided
     while (!validInput) {
         if (std::cin.fail()) { // if cin fails
+            Logger::log(ERROR, "validateInput() input was invalid");
             std::cin.clear(); // clear the error state of the buffer
             // ignore the rest of the line after the first instance of the error
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
