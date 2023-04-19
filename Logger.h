@@ -1,0 +1,14 @@
+//
+// Created by katar on 4/18/2023.
+//
+
+#ifndef PROJECT_SHAPES_CALCULATOR_LOGGER_H
+#define PROJECT_SHAPES_CALCULATOR_LOGGER_H
+
+
+class Logger {
+
+};
+
+
+#endif //PROJECT_SHAPES_CALCULATOR_LOGGER_H
