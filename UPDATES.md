@@ -77,10 +77,13 @@ pointers ensures that shapes cannot be easily manipulated by malicious actors.
 
 **Difficulty:** Moderate <br />
 
-**Link:** <br />
+**Link:** [Issue 6](https://github.com/HoneyKat11/Shapes-Calculator/issues/7)<br />
 
-**Summary:** The purpose of this task will be to add a method of logging errors in the code so that when it is run errors are 
-documented to avoid purely relying on manual reporting of vulnerabilities in the code. 
+**Summary:** The purpose of this task was to add a method of logging errors to the code so that when
+errors occur they are logged permanently with a timestamp. This will allow clear documentation of errors
+and allow easy identification of future improvements that can be made to the codebase. The source for the
+[logging class can be found here](https://rollbar.com/guides/cpp/cpp-error-logging/). 
+The source for the [timestamp can be found here](https://www.techiedelight.com/get-current-time-and-date-in-cpp/).
 
 # Planning Issues
 Documenting Planning issues which were not completed during initial planning for this project and how they can be implemented in future planning/projects.
