@@ -8,6 +8,7 @@
 #include <iostream> // console I/O
 #include <vector> // vectors (lists)
 #include <memory> // dynamic memory management library (unique pointers)
+#include <limits> // validate user input
 #include "Point.h"
 #include "Shape.h"
 #include "Line.h"
@@ -17,13 +18,13 @@
 
 // Function Prototypes (Declarations)
 //-----------------------------------------------------------
+float validateInput(float input);
 Point getPoint();
 std::unique_ptr<Line> createLine();
 std::unique_ptr<Rectangle> createRectangle();
 std::unique_ptr<Circle> createCircle();
 std::unique_ptr<Triangle> createTriangle();
 void printShapes(std::vector<std::unique_ptr<Shape>>& shapesVector);
-
 
 int main() {
 
@@ -45,6 +46,18 @@ int main() {
         std::cout << "> ";
 
         std::cin >> shapeMode;
+        bool validMode = false;
+
+        while (!validMode) {
+            if (std::cin.fail()) {
+                std::cin.clear();
+                std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                std::cout << "You have entered an invalid mode. Please retry: ";
+                std::cin >> shapeMode;
+            } else {
+                validMode = true;
+            }
+        }
 
         switch(shapeMode) {
             case LINE:
@@ -75,6 +88,31 @@ int main() {
 
 // Function Definitions
 //-----------------------------------------------------------
+/**
+ * validate float input
+ * @param input - from the user
+ * @return valid float
+ */
+float validateInput(float input) {
+    float userInput = input;
+    bool validInput = false;
+
+    // loop until valid input is provided
+    while (!validInput) {
+        if (std::cin.fail()) { // if cin fails
+            std::cin.clear(); // clear the error state of the buffer
+            // ignore the rest of the line after the first instance of the error
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            std::cout << "You have entered an invalid input. Please retry: ";
+            std::cin >> userInput; // prompt for new input
+        } else { // cin was successful
+            validInput = true;
+        }
+    }
+
+    return userInput;
+}
+
 
 /**
  * create a point
@@ -84,8 +122,13 @@ Point getPoint() {
     Point newPoint;
 
     float coordX, coordY;
-    std::cout << "Please enter the coordinates for a point: ";
-    std::cin >> coordX >> coordY;
+    std::cout << "Please enter the X coordinate for a point: ";
+    std::cin >> coordX;
+    coordX = validateInput(coordX);
+
+    std::cout << "Please enter the Y coordinate for a point: ";
+    std::cin >> coordY;
+    coordY = validateInput(coordY);
 
     newPoint.setCoordinateX(coordX);
     newPoint.setCoordinateY(coordY);
@@ -122,11 +165,13 @@ std::unique_ptr<Rectangle> createRectangle() {
     float newWidth;
     std::cout << "Please enter the width of the rectangle: ";
     std::cin >> newWidth;
+    newWidth = validateInput(newWidth);
     newRectangle->setWidth(newWidth);
 
     float newHeight;
     std::cout << "Please enter the height of the rectangle: ";
     std::cin >> newHeight;
+    newHeight = validateInput(newHeight);
     newRectangle->setHeight(newHeight);
 
     return newRectangle;
@@ -146,6 +191,7 @@ std::unique_ptr<Circle> createCircle() {
     float radius;
     std::cout << "Please enter the radius of the circle: ";
     std::cin >> radius;
+    radius = validateInput(radius);
     newCircle->setRadius(radius);
 
     return newCircle;
@@ -165,11 +211,13 @@ std::unique_ptr<Triangle> createTriangle() {
     float height;
     std::cout << "Please enter the height of the triangle: ";
     std::cin >> height;
+    height = validateInput(height);
     newTriangle->setHeight(height);
 
     float base;
     std::cout << "Please enter the base of the triangle: ";
     std::cin >> base;
+    base = validateInput(base);
     newTriangle->setBase(base);
 
     return newTriangle;

@@ -51,10 +51,14 @@ to identify individuals making unauthorized changes.
 
 **Difficulty:** Moderate <br />
 
-**Link:** <br />
+**Link:** [Issue 4](https://github.com/HoneyKat11/Shapes-Calculator/issues/4)<br />
 
-**Summary:** The purpose of this task will be to limit (or eliminate) buffer underflow and overflow as well as unwanted
-inputs (i.e. a word being input when a number is required) to avoid exploitation of the code.
+**Summary:** The purpose of this task was to eliminate the possibility of buffer underflow, buffer overflow,
+and any unwanted input provided by the user. Avoiding these types of inputs will also prevent malicious
+actors from taking advantage of code vulnerabilities. The issue was resolved by adding a function that 
+verifies that numerical input is a float and prompts for re-entry in a loop until acceptable input
+is provided by the user. The method used to validate input 
+[can be found here](https://www.hackerearth.com/practice/notes/validating-user-input-in-c/).
 
 ### Item 5: Add Smart Pointers to Main Program
 **Priority:** Middle <br />
